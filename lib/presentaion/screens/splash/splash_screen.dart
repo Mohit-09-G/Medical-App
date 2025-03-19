@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
+import 'package:health_app/config/customtextstyle.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -25,24 +26,9 @@ class SplashScreen extends StatelessWidget {
             children: [
               Text(
                 AppString.appname,
-                style: TextStyle(
-                    height: 1,
-                    fontFamily: 'LeagueSpartan',
-                    color: AppColors.white,
-                    letterSpacing: 0,
-                    fontWeight: FontWeight.w100,
-                    fontSize: 48),
+                style: CustomTextStyle.size48white,
               ),
-              Text(
-                AppString.appname1,
-                style: TextStyle(
-                    height: 0.6,
-                    fontWeight: FontWeight.w100,
-                    fontFamily: 'LeagueSpartan',
-                    color: AppColors.white,
-                    letterSpacing: 0,
-                    fontSize: 48),
-              ),
+              Text(AppString.appname1, style: CustomTextStyle.size48hwhite),
             ],
           ),
           SizedBox(
@@ -50,12 +36,7 @@ class SplashScreen extends StatelessWidget {
           ),
           Text(
             AppString.linesplash,
-            style: TextStyle(
-                fontFamily: 'LeagueSpartan',
-                color: AppColors.white,
-                letterSpacing: 0,
-                fontWeight: FontWeight.w600,
-                fontSize: 15),
+            style: CustomTextStyle.size15white,
           )
         ],
       ),

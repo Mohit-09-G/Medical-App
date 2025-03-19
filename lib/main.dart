@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:health_app/app_pages.dart';
 import 'package:health_app/binding/splash/splash_binding.dart';
-import 'package:health_app/home_page.dart';
+
 import 'package:health_app/di/injection.dart' as get_it;
 
 void main() async {
-  await get_it.inIt();
+  await get_it.init();
   runApp(const MyApp());
 }
 

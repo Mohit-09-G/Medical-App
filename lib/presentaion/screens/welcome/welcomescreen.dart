@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
+import 'package:health_app/config/customtextstyle.dart';
 import 'package:health_app/presentaion/screens/welcome/widgets/oval_buttons.dart';
 
 class Welcomescreen extends StatelessWidget {
@@ -28,36 +29,14 @@ class Welcomescreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        AppString.appname,
-                        style: TextStyle(
-                            height: 1,
-                            fontFamily: 'LeagueSpartan',
-                            color: AppColors.bluemain,
-                            letterSpacing: 0,
-                            fontWeight: FontWeight.w100,
-                            fontSize: 48),
-                      ),
-                      Text(
-                        AppString.appname1,
-                        style: TextStyle(
-                            height: 0.6,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: 'LeagueSpartan',
-                            color: AppColors.bluemain,
-                            letterSpacing: 0,
-                            fontSize: 48),
-                      ),
+                      Text(AppString.appname,
+                          style: CustomTextStyle.size48blue),
+                      Text(AppString.appname1, style: CustomTextStyle.size48h),
                     ],
                   ),
                   Text(
                     AppString.linesplash,
-                    style: TextStyle(
-                        fontFamily: 'LeagueSpartan',
-                        color: AppColors.bluemain,
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15),
+                    style: CustomTextStyle.size15blue,
                   ),
                 ],
               ),
@@ -75,16 +54,9 @@ class Welcomescreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
-                              child: Text(
-                                AppString.welcomLine,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontFamily: 'LeagueSpartan',
-                                    fontSize: 13,
-                                    height: 1,
-                                    color: AppColors.black,
-                                    fontWeight: FontWeight.w600),
-                              ),
+                              child: Text(AppString.welcomLine,
+                                  textAlign: TextAlign.center,
+                                  style: CustomTextStyle.size13black),
                             ),
                           ],
                         ),
@@ -101,7 +73,7 @@ class Welcomescreen extends StatelessWidget {
                               flex: 6,
                               child: OvalButtons(
                                   margin: EdgeInsets.only(top: 40),
-                                  buttontext: 'Log In',
+                                  buttontext: AppString.login,
                                   buttonColor: AppColors.bluemain,
                                   textColor: AppColors.white,
                                   onTap: () {}),
@@ -116,7 +88,7 @@ class Welcomescreen extends StatelessWidget {
                               flex: 6,
                               child: OvalButtons(
                                   margin: EdgeInsets.only(top: 10),
-                                  buttontext: 'Sign In',
+                                  buttontext: AppString.signin,
                                   buttonColor: AppColors.grey,
                                   textColor: AppColors.bluemain,
                                   onTap: () {}),
