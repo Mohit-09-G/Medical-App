@@ -39,10 +39,15 @@ class ForgetpasswordController extends GetxController {
   }
 
   bool checkPasswordMatch() {
-    validForm();
+    if (passwordController.text.isEmpty ||
+        confirmapasswordController.text.isEmpty) {
+      return false;
+    }
+
     if (passwordController.text == confirmapasswordController.text) {
       return true;
     }
+
     return false;
   }
 

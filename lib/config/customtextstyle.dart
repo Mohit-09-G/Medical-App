@@ -76,9 +76,9 @@ class CustomTextStyle {
   );
 
   static TextStyle size14 = GoogleFonts.leagueSpartan(
-    fontSize: 14.0,
+    fontSize: 17.0,
     color: Colors.black87,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle size13black = GoogleFonts.leagueSpartan(

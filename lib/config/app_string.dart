@@ -25,6 +25,8 @@ class AppString {
   static const String term = 'Terms of Use ';
   static const String setpassword = 'Set Password';
   static const String createPasswordtxt = 'Create New Password';
+  static const String appbarNamegreet = 'Hi, WelcomeBack';
+  static const String appbarName = 'John Doe';
 
 //
 
