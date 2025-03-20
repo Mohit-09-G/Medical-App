@@ -12,8 +12,9 @@ class AppString {
   static const String forgetPasswordTxt = 'Forget Password';
   static const String signuptext = 'or sign up with';
   static const String signuptext2 = 'Don’t have an account? ';
+  static const String alreadyhave = 'already have an account? ';
   static const String singUp = 'Sign Up';
-  static const String hello = 'Hello!';
+  static const String hello = 'New Account';
   static const String fullName = 'Full name';
   static const String mobileNumber = 'Mobile Number';
   static const String dob = 'Date of birth';
@@ -23,7 +24,7 @@ class AppString {
   static const String and = 'and ';
   static const String term = 'Terms of Use ';
   static const String setpassword = 'Set Password';
-  static const String createPasswordtxt = 'Create new password';
+  static const String createPasswordtxt = 'Create New Password';
 
 //
 

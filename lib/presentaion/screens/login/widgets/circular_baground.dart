@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 
 class CircularIcon extends StatelessWidget {
-  final IconData icons;
-  const CircularIcon({super.key, required this.icons});
+  final String iconAssetPath;
+  const CircularIcon({super.key, required this.iconAssetPath});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +11,8 @@ class CircularIcon extends StatelessWidget {
       decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.grey),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Icon(
-          icons,
-          size: 22,
-          color: AppColors.bluemain,
+        child: Image.asset(
+          iconAssetPath,
         ),
       ),
     );

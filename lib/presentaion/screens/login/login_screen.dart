@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:health_app/config/app_colors.dart';
+import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
 import 'package:health_app/presentaion/controller/login/login_screen_controller.dart';
@@ -98,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             label: "example@example.com",
                             obscureText: false,
                             onChanged: (value) {
-                              print(value);
+                              controller.validateEmailorNumber(value);
                             },
                             errorText: controller.emailError),
                       )
@@ -116,15 +117,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       Expanded(
-                        child: CustomTextField(
-                            controller: controller.emailController,
+                          child: Obx(
+                        () => CustomTextField(
+                            controller: controller.passwordController,
                             label: "*************",
-                            obscureText: false,
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  controller.togglePasswordVisibility();
+                                },
+                                icon: Icon(controller.obscurePassword.value
+                                    ? Icons.visibility_off_outlined
+                                    : Icons.visibility_outlined)),
+                            obscureText: controller.obscurePassword.value,
                             onChanged: (value) {
-                              print(value);
+                              controller.validatePassword(value);
                             },
-                            errorText: controller.emailError),
-                      )
+                            errorText: controller.passwordError),
+                      ))
                     ],
                   ),
                   Padding(
@@ -148,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Expanded(
-              flex: 4,
+              flex: 3,
               child: Column(
                 spacing: 15,
                 children: [
@@ -162,8 +171,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             buttontext: AppString.login,
                             buttonColor: AppColors.bluemain,
                             textColor: AppColors.white,
-                            onTap: () {},
-                            margin: EdgeInsets.only(top: 20)),
+                            onTap: () {
+                              if (controller.isFormValid.value) {
+                                Get.snackbar('Login', 'Succesfully Login');
+                                controller.navigateToHome();
+                                controller.clearAllFields();
+                              } else {
+                                Get.snackbar('Validation Error',
+                                    'Please fill in all required fields correctly');
+                              }
+                            },
+                            margin: EdgeInsets.only(top: 1)),
                       ),
                       Expanded(
                         flex: 1,
@@ -198,13 +216,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CircularIcon(
-                              icons: Icons.facebook,
+                              iconAssetPath: AppImages.google,
                             ),
                             CircularIcon(
-                              icons: Icons.facebook,
+                              iconAssetPath: AppImages.facebook,
                             ),
                             CircularIcon(
-                              icons: Icons.facebook,
+                              iconAssetPath: AppImages.fingerprint,
                             )
                           ],
                         ),

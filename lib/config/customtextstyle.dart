@@ -13,7 +13,7 @@ class CustomTextStyle {
     fontSize: 24.0,
     height: 1,
     color: AppColors.bluemain,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
   );
 
   static TextStyle size48blue = GoogleFonts.leagueSpartan(
@@ -49,6 +49,12 @@ class CustomTextStyle {
     color: AppColors.black,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle size20hint = GoogleFonts.leagueSpartan(
+    fontSize: 20.0,
+    height: 0.01,
+    color: AppColors.textFiledblue,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle size20blue = GoogleFonts.leagueSpartan(
     fontSize: 20.0,
     color: AppColors.textFiledblue,
@@ -83,14 +89,14 @@ class CustomTextStyle {
   );
 
   static TextStyle size12black = GoogleFonts.leagueSpartan(
-    fontSize: 12.0,
+    fontSize: 14.0,
     height: 1,
     color: AppColors.black,
     fontWeight: FontWeight.w300,
   );
 
   static TextStyle size12blue = GoogleFonts.leagueSpartan(
-    fontSize: 12.0,
+    fontSize: 14.0,
     height: 1,
     color: AppColors.bluemain,
     fontWeight: FontWeight.w500,

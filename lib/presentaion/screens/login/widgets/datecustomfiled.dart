@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/customtextstyle.dart';
 
-class CustomTextField extends StatelessWidget {
+class Datecustomfiled extends StatelessWidget {
   final TextEditingController controller;
   final String label;
   final bool obscureText;
@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
   final Function(String) onChanged;
   final RxString errorText;
 
-  const CustomTextField(
+  const Datecustomfiled(
       {super.key,
       required this.controller,
       required this.label,
@@ -43,7 +43,7 @@ class CustomTextField extends StatelessWidget {
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
             hintText: label,
-            hintStyle: CustomTextStyle.size20hint,
+            hintStyle: TextStyle(color: AppColors.texthintblue),
             fillColor: AppColors.boxFill,
             filled: true,
             border: OutlineInputBorder(

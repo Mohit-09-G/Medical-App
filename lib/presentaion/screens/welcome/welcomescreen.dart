@@ -102,7 +102,9 @@ class _WelcomescreenState extends State<Welcomescreen> {
                                   buttontext: AppString.signin,
                                   buttonColor: AppColors.grey,
                                   textColor: AppColors.bluemain,
-                                  onTap: () {}),
+                                  onTap: () {
+                                    controller.moveToSingup();
+                                  }),
                             ),
                             Expanded(child: SizedBox()),
                           ],

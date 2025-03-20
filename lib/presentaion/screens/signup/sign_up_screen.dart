@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
+import 'package:health_app/config/app_images.dart';
 
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
@@ -8,6 +9,7 @@ import 'package:health_app/presentaion/controller/signup/signup_controller.dart'
 import 'package:health_app/presentaion/screens/login/widgets/appbar.dart';
 import 'package:health_app/presentaion/screens/login/widgets/circular_baground.dart';
 import 'package:health_app/presentaion/screens/login/widgets/custom_input_text_field.dart';
+import 'package:health_app/presentaion/screens/login/widgets/datecustomfiled.dart';
 import 'package:health_app/presentaion/screens/welcome/widgets/oval_buttons.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -32,141 +34,181 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: AppColors.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(70),
-          child: AppbarCommon(title: AppString.hello, ontap: () {})),
+          child: AppbarCommon(
+              title: AppString.hello,
+              ontap: () {
+                controller.back();
+              })),
       body: Padding(
         padding: EdgeInsets.only(left: 30, right: 30),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Expanded(
-              flex: 3,
+              flex: 6,
               child: Column(
+                spacing: 10,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  Column(
+                    spacing: 3,
                     children: [
-                      Text(
-                        AppString.fullName,
-                        style: CustomTextStyle.size20black,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            AppString.fullName,
+                            style: CustomTextStyle.size20black,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: CustomTextField(
+                                controller: controller.nameController,
+                                label: "xyzexy",
+                                obscureText: false,
+                                onChanged: (value) {
+                                  controller.validateName(value);
+                                },
+                                errorText: controller.nameError),
+                          )
+                        ],
                       ),
                     ],
                   ),
-                  Row(
+                  Column(
+                    spacing: 3,
                     children: [
-                      Expanded(
-                        child: CustomTextField(
-                            controller: controller.emailController,
-                            label: "xyzexy",
-                            obscureText: false,
-                            onChanged: (value) {
-                              print(value);
-                            },
-                            errorText: controller.emailError),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        AppString.passwordText,
-                        style: CustomTextStyle.size20black,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            AppString.passwordText,
+                            style: CustomTextStyle.size20black,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Obx(
+                            () => CustomTextField(
+                                controller: controller.passwordController,
+                                label: "*********",
+                                obscureText: controller.obscurePassword.value,
+                                suffixIcon: IconButton(
+                                    onPressed: () {
+                                      controller.togglePasswordVisibility();
+                                    },
+                                    icon: Icon(controller.obscurePassword.value
+                                        ? Icons.visibility_off_outlined
+                                        : Icons.visibility_outlined)),
+                                onChanged: (value) {
+                                  controller.validatePassword(value);
+                                },
+                                errorText: controller.paswordError),
+                          ))
+                        ],
                       ),
                     ],
                   ),
-                  Row(
+                  Column(
+                    spacing: 3,
                     children: [
-                      Expanded(
-                        child: CustomTextField(
-                            controller: controller.emailController,
-                            label: "*********",
-                            obscureText: false,
-                            onChanged: (value) {
-                              print(value);
-                            },
-                            errorText: controller.emailError),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        AppString.emailtet,
-                        style: CustomTextStyle.size20black,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            AppString.emailtet,
+                            style: CustomTextStyle.size20black,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: CustomTextField(
+                                controller: controller.emailController,
+                                label: "example@gmail.com",
+                                obscureText: false,
+                                onChanged: (value) {
+                                  controller.validateEmail(value);
+                                },
+                                errorText: controller.emailError),
+                          )
+                        ],
                       ),
                     ],
                   ),
-                  Row(
+                  Column(
+                    spacing: 3,
                     children: [
-                      Expanded(
-                        child: CustomTextField(
-                            controller: controller.emailController,
-                            label: "example@gmail.com",
-                            obscureText: false,
-                            onChanged: (value) {
-                              print(value);
-                            },
-                            errorText: controller.emailError),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        AppString.mobileNumber,
-                        style: CustomTextStyle.size20black,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            AppString.mobileNumber,
+                            style: CustomTextStyle.size20black,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: CustomTextField(
+                                controller: controller.mobileController,
+                                label: "12345678",
+                                obscureText: false,
+                                onChanged: (value) {
+                                  controller.validateMobile(value);
+                                },
+                                errorText: controller.mobileError),
+                          )
+                        ],
                       ),
                     ],
                   ),
-                  Row(
+                  Column(
+                    spacing: 3,
                     children: [
-                      Expanded(
-                        child: CustomTextField(
-                            controller: controller.emailController,
-                            label: "12345678",
-                            obscureText: false,
-                            onChanged: (value) {
-                              print(value);
-                            },
-                            errorText: controller.emailError),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        AppString.dob,
-                        style: CustomTextStyle.size20black,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            AppString.dob,
+                            style: CustomTextStyle.size20black,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: CustomTextField(
-                            controller: controller.emailController,
-                            label: "DD/MM/YY",
-                            obscureText: false,
-                            onChanged: (value) {
-                              print(value);
-                            },
-                            errorText: controller.emailError),
-                      )
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Datecustomfiled(
+                                onTap: controller.datePicker,
+                                controller: controller.dateController,
+                                label: "DD/MM/YY",
+                                obscureText: false,
+                                onChanged: (value) {
+                                  controller.validateDOb(value);
+                                },
+                                errorText: controller.dateError),
+                          )
+                        ],
+                      ),
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 20),
+                    padding: EdgeInsets.only(top: 15),
                     child: Column(
+                      spacing: 3,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              AppString.signuptext2,
+                              AppString.textsignscreen,
                               style: CustomTextStyle.size12black,
                             )
                           ],
@@ -206,24 +248,56 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Expanded(
               flex: 2,
               child: Column(
-                spacing: 15,
+                spacing: 13,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Column(
+                    spacing: 15,
                     children: [
-                      Expanded(flex: 1, child: SizedBox()),
-                      Expanded(
-                        flex: 3,
-                        child: OvalButtons(
-                            buttontext: AppString.singUp,
-                            buttonColor: AppColors.bluemain,
-                            textColor: AppColors.white,
-                            onTap: () {},
-                            margin: EdgeInsets.only(top: 20)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(flex: 1, child: SizedBox()),
+                          Expanded(
+                            flex: 3,
+                            child: OvalButtons(
+                                buttontext: AppString.singUp,
+                                buttonColor: AppColors.bluemain,
+                                textColor: AppColors.white,
+                                onTap: () {
+                                  if (controller.isFormValid.value) {
+                                    Get.snackbar(
+                                        'created', 'Succesfully Registred');
+                                    controller.clearAllFields();
+                                  } else {
+                                    Get.snackbar('Validation Error',
+                                        'Please fill in all required fields correctly');
+                                  }
+                                },
+                                margin: EdgeInsets.only(top: 2)),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: SizedBox(),
+                          ),
+                        ],
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: SizedBox(),
+                      Row(
+                        children: [
+                          Expanded(flex: 2, child: SizedBox()),
+                          Expanded(
+                            flex: 3,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  AppString.signuptext,
+                                  style: CustomTextStyle.size12black,
+                                )
+                              ],
+                            ),
+                          ),
+                          Expanded(flex: 2, child: SizedBox()),
+                        ],
                       ),
                     ],
                   ),
@@ -235,32 +309,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text(
-                              AppString.signuptext,
-                              style: CustomTextStyle.size12black,
-                            )
-                          ],
-                        ),
-                      ),
-                      Expanded(flex: 2, child: SizedBox()),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(flex: 2, child: SizedBox()),
-                      Expanded(
-                        flex: 3,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
                             CircularIcon(
-                              icons: Icons.facebook,
+                              iconAssetPath: AppImages.google,
                             ),
                             CircularIcon(
-                              icons: Icons.facebook,
+                              iconAssetPath: AppImages.facebook,
                             ),
                             CircularIcon(
-                              icons: Icons.facebook,
+                              iconAssetPath: AppImages.fingerprint,
                             )
                           ],
                         ),
@@ -269,10 +325,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 25),
+                    padding: EdgeInsets.only(top: 15),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(flex: 1, child: SizedBox()),
                         Expanded(
                           flex: 2,
                           child: Row(
@@ -281,13 +337,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Row(
                                 children: [
                                   Text(
-                                    AppString.signuptext2,
+                                    AppString.alreadyhave,
                                     style: CustomTextStyle.size12black,
                                   ),
                                   InkWell(
-                                    onTap: () {},
+                                    onTap: () {
+                                      controller.navigateToLogin();
+                                    },
                                     child: Text(
-                                      AppString.singUp,
+                                      AppString.login,
                                       style: CustomTextStyle.size12blue,
                                     ),
                                   )
@@ -296,7 +354,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ],
                           ),
                         ),
-                        Expanded(flex: 1, child: SizedBox()),
                       ],
                     ),
                   ),
