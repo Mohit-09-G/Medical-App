@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
+import 'package:health_app/presentaion/controller/welcome/welcomescreen_controller.dart';
 import 'package:health_app/presentaion/screens/welcome/widgets/oval_buttons.dart';
 
-class Welcomescreen extends StatelessWidget {
+class Welcomescreen extends StatefulWidget {
   const Welcomescreen({super.key});
+
+  @override
+  State<Welcomescreen> createState() => _WelcomescreenState();
+}
+
+class _WelcomescreenState extends State<Welcomescreen> {
+  WelcomescreenController controller = WelcomescreenController();
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +85,9 @@ class Welcomescreen extends StatelessWidget {
                                   buttontext: AppString.login,
                                   buttonColor: AppColors.bluemain,
                                   textColor: AppColors.white,
-                                  onTap: () {}),
+                                  onTap: () {
+                                    controller.moveTOlogin();
+                                  }),
                             ),
                             Expanded(child: SizedBox()),
                           ],
