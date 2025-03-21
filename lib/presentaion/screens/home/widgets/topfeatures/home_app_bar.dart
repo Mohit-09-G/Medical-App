@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:health_app/config/app_colors.dart'; // Assuming this is a custom config file.
-import 'package:health_app/config/app_images.dart'; // Assuming this is a custom config file for images.
+import 'package:health_app/config/app_colors.dart';
+import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
-import 'package:health_app/presentaion/screens/login/widgets/circular_baground.dart'; // Assuming this is a custom config file for strings.
+import 'package:health_app/presentaion/screens/home/widgets/topfeatures/circular_baground.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -40,8 +40,10 @@ class HomeAppBar extends StatelessWidget {
                 spacing: 5,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  CircularIcon(iconAssetPath: AppImages.bellIcon),
-                  CircularIcon(iconAssetPath: AppImages.settingIcons)
+                  CircularBaground(
+                    iconAssetPath: AppImages.bellIcon,
+                  ),
+                  CircularBaground(iconAssetPath: AppImages.settingIcons)
                 ],
               ),
             )

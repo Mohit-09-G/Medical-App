@@ -27,6 +27,13 @@ class AppString {
   static const String createPasswordtxt = 'Create New Password';
   static const String appbarNamegreet = 'Hi, WelcomeBack';
   static const String appbarName = 'John Doe';
+  static const String doctor = 'Doctors';
+  static const String favourite = 'Favorite';
+  static const String daynum = '9';
+  static const String dayname = 'Mon';
+  static const String sheduletime = '11 Wednesday - Today';
+  static const String drName = 'Dr. Olivia Turner, M.D.';
+  static const String drgenre = 'Dermato-Endocrinology';
 
 //
 
