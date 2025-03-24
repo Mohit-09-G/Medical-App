@@ -4,10 +4,10 @@ import 'package:health_app/config/app_images.dart';
 
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/shedule-data-container/icons_baground.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey-container/prescription-card/icons_baground.dart';
 
-class ActualSheduleContainer extends StatelessWidget {
-  const ActualSheduleContainer({super.key});
+class TreatmentContainer extends StatelessWidget {
+  const TreatmentContainer({super.key});
 
   @override
   Widget build(BuildContext context) {

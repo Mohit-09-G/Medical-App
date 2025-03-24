@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/shedule-data-container/actual_shedule_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey-container/prescription-card/treatment_container.dart';
 
 class SheduleContainer extends StatelessWidget {
   const SheduleContainer({super.key});
@@ -10,7 +10,7 @@ class SheduleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
       decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           color: AppColors.white,
@@ -56,7 +56,7 @@ class SheduleContainer extends StatelessWidget {
                         Text("--------------------------------------")
                       ],
                     ),
-                    ActualSheduleContainer(),
+                    TreatmentContainer(),
                     Row(
                       children: [
                         Text("--------------------------------------")

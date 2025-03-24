@@ -5,4 +5,6 @@ class AppRoutes {
   static const String signUpScreen = '/signscreen';
   static const String forgetPasswordScreen = '/forgetscreen';
   static const String homescreen = '/homescren';
+  static const String mainScreen = '/mainScreen';
+  static const String doctorScreen = '/doctor';
 }

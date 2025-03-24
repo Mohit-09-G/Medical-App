@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:health_app/home_page.dart';
+import 'package:intl/intl.dart';
 
 class HomeScreenController extends GetxController {
   RxList doctors = [
@@ -103,4 +106,44 @@ class HomeScreenController extends GetxController {
       'image': 'assets/images/doctor20.png'
     },
   ].obs;
+
+  RxList<DateTime> dateList = <DateTime>[].obs;
+
+  RxInt currentStartIndex = 0.obs;
+
+  late PageController pageController;
+
+  @override
+  void onInit() {
+    super.onInit();
+
+    dateList.value = getNext7day();
+    pageController = PageController();
+  }
+
+  @override
+  void onClose() {
+    pageController.dispose();
+    super.onClose();
+  }
+
+  List<DateTime> getNext7day() {
+    return List.generate(7, (index) {
+      return DateTime.now()
+          .add(Duration(days: currentStartIndex.value + index));
+    });
+  }
+
+  void loadNext7Days() {
+    currentStartIndex.value += 7;
+    dateList.value = getNext7day();
+  }
+
+  String getFormattedDate(DateTime date) {
+    return DateFormat('EEE').format(date);
+  }
+
+  String getFormattedDayNumber(DateTime date) {
+    return DateFormat('d').format(date);
+  }
 }

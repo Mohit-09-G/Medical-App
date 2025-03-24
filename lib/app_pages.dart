@@ -1,11 +1,16 @@
 import 'package:get/route_manager.dart';
+import 'package:health_app/binding/docotor_screen/doctor_screen_binding.dart';
 import 'package:health_app/binding/forgotpassword/forgotassword_binding.dart';
 import 'package:health_app/binding/home/home_screen_binding.dart';
 import 'package:health_app/binding/login/login_screen_binding.dart';
+import 'package:health_app/binding/mainscreen/mainscreen_binding.dart';
 import 'package:health_app/binding/signup/signup_binding.dart';
 import 'package:health_app/binding/splash/splash_binding.dart';
 import 'package:health_app/binding/welcome/welcomescreen_binding.dart';
 import 'package:health_app/config/app_routes.dart';
+import 'package:health_app/presentaion/controller/doctorscreen/doctorcreen_controller.dart';
+import 'package:health_app/presentaion/mainscreen/mainscreen.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor_screen.dart';
 import 'package:health_app/presentaion/screens/forgetpassword/forgetpassword_screeen.dart';
 import 'package:health_app/presentaion/screens/home/home_screen.dart';
 import 'package:health_app/presentaion/screens/login/login_screen.dart';
@@ -38,6 +43,14 @@ class AppPages {
     GetPage(
         name: AppRoutes.homescreen,
         page: () => HomeScreen(),
-        binding: HomeScreenBinding())
+        binding: HomeScreenBinding()),
+    GetPage(
+        name: AppRoutes.mainScreen,
+        page: () => Mainscreen(),
+        binding: MainscreenBinding()),
+    GetPage(
+        name: AppRoutes.doctorScreen,
+        page: () => DoctorScreen(),
+        binding: DoctorScreenBinding())
   ];
 }

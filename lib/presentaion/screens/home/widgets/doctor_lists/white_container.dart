@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
-import 'package:health_app/presentaion/screens/home/widgets/white-container/data-container/grey_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/doctor_lists/doctor_data_card/grey_container.dart';
 
 class WhiteContainer extends StatefulWidget {
   const WhiteContainer({super.key});

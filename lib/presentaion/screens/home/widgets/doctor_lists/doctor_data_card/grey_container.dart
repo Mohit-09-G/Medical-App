@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
-import 'package:health_app/presentaion/screens/home/widgets/white-container/data-container/dotor_name_container.dart';
-import 'package:health_app/presentaion/screens/home/widgets/white-container/data-container/image_container.dart';
-import 'package:health_app/presentaion/screens/home/widgets/white-container/data-container/plane_white_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/doctor_lists/doctor_data_card/dotor_name_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/doctor_lists/doctor_data_card/image_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/doctor_lists/doctor_data_card/plane_white_container.dart';
 
 class GreyContainerDoctorList extends StatelessWidget {
   final String doctorname;

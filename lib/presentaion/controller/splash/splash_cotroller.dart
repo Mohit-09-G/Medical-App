@@ -11,6 +11,6 @@ class SplashCotroller extends GetxController {
 
   void splashtime() async {
     await Future.delayed(Duration(seconds: 3));
-    Get.offAndToNamed(AppRoutes.welcomeScreen);
+    Get.offAndToNamed(AppRoutes.mainScreen);
   }
 }

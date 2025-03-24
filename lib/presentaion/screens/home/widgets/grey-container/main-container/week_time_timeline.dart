@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
-import 'package:health_app/config/app_string.dart';
+
 import 'package:health_app/config/customtextstyle.dart';
 
 class DateListItem extends StatelessWidget {
-  const DateListItem({super.key});
+  final String date;
+  final String dayNum;
+  const DateListItem({super.key, required this.date, required this.dayNum});
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +22,15 @@ class DateListItem extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 20, bottom: 20, left: 8, right: 8),
+        padding: const EdgeInsets.only(top: 7, bottom: 5, left: 8, right: 8),
         child: Column(
           children: [
             Text(
-              AppString.daynum,
+              dayNum,
               style: CustomTextStyle.size24black,
             ),
             Text(
-              AppString.dayname,
+              date,
               style: CustomTextStyle.size12black,
             ),
           ],

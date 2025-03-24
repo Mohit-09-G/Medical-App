@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/main-container/date_list_item.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/shedule-date-calender-container/date_list_item_container.dart';
+import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey-container/%20schedule-prescrition-time/day_hours_items.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey-container/main-container/week_time_timeline.dart';
 
 class GreyContainer extends StatefulWidget {
   const GreyContainer({super.key});
@@ -11,25 +13,56 @@ class GreyContainer extends StatefulWidget {
 }
 
 class _GreyContainerState extends State<GreyContainer> {
+  late HomeScreenController controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    controller = Get.find<HomeScreenController>();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration:
           BoxDecoration(shape: BoxShape.rectangle, color: AppColors.grey),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 35),
         child: Column(
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(
-                    12,
-                    (index) => Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: DateListItem(),
-                        )),
-              ),
+            Expanded(
+              child: Obx(() {
+                return PageView.builder(
+                  scrollBehavior: ScrollBehavior(),
+                  controller: controller.pageController,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: controller.dateList.length,
+                  onPageChanged: (pageIndex) {
+                    if (pageIndex == controller.dateList.length - 1) {
+                      controller.loadNext7Days();
+                    }
+                  },
+                  itemBuilder: (context, index) {
+                    DateTime date = controller.dateList[index];
+                    String getFormattedDate = controller.getFormattedDate(date);
+                    String getFormattedDayNumber =
+                        controller.getFormattedDayNumber(date);
+
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Row(
+                        children: [
+                          DateListItem(
+                            date: getFormattedDate,
+                            dayNum: getFormattedDayNumber,
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              }),
             ),
             SheduleContainer(),
           ],

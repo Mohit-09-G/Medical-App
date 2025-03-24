@@ -16,17 +16,15 @@ class IconWithText extends StatelessWidget {
           color: AppColors.white, borderRadius: BorderRadius.circular(13)),
       child: Padding(
         padding: const EdgeInsets.only(left: 3, right: 20, top: 3, bottom: 2.5),
-        child: Expanded(
-          child: Row(
-            spacing: 2,
-            children: [
-              Image.asset(icon),
-              Text(
-                text,
-                style: CustomTextStyle.size12blue,
-              ),
-            ],
-          ),
+        child: Row(
+          spacing: 2,
+          children: [
+            Image.asset(icon),
+            Text(
+              text,
+              style: CustomTextStyle.size12blue,
+            ),
+          ],
         ),
       ),
     );
