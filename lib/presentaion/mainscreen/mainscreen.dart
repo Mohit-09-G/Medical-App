@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:health_app/home_page.dart';
 
 import 'package:health_app/presentaion/controller/mainscreen/mainscreen_controller.dart';
+import 'package:health_app/presentaion/mainscreen/widgets/bottom_bar.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/doctor_screen.dart';
 import 'package:health_app/presentaion/screens/home/home_screen.dart';
-import 'package:health_app/presentaion/screens/home/widgets/bottom-navigation-bar/homebottombar.dart';
+
 import 'package:health_app/presentaion/screens/login/login_screen.dart';
-// Import the controller
 
 class Mainscreen extends StatelessWidget {
   Mainscreen({super.key});
@@ -27,7 +27,7 @@ class Mainscreen extends StatelessWidget {
       body: Obx(() {
         return pages[controller.selectedIndex.value];
       }),
-      bottomNavigationBar: Homebottombar(),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

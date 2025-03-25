@@ -8,8 +8,9 @@ import 'package:health_app/binding/signup/signup_binding.dart';
 import 'package:health_app/binding/splash/splash_binding.dart';
 import 'package:health_app/binding/welcome/welcomescreen_binding.dart';
 import 'package:health_app/config/app_routes.dart';
-import 'package:health_app/presentaion/controller/doctorscreen/doctorcreen_controller.dart';
+
 import 'package:health_app/presentaion/mainscreen/mainscreen.dart';
+import 'package:health_app/presentaion/screens/doctor-info/doctor_info_screen.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/doctor_screen.dart';
 import 'package:health_app/presentaion/screens/forgetpassword/forgetpassword_screeen.dart';
 import 'package:health_app/presentaion/screens/home/home_screen.dart';
@@ -51,6 +52,10 @@ class AppPages {
     GetPage(
         name: AppRoutes.doctorScreen,
         page: () => DoctorScreen(),
+        binding: DoctorScreenBinding()),
+    GetPage(
+        name: AppRoutes.docInfo,
+        page: () => DoctorInfoScreen(),
         binding: DoctorScreenBinding())
   ];
 }

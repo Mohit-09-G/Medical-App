@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:health_app/presentaion/controller/doctor-info/doctor_info_controller.dart';
 import 'package:health_app/presentaion/controller/doctorscreen/doctorcreen_controller.dart';
 import 'package:health_app/presentaion/controller/forgetpassword/forgetpassword_controller.dart';
 import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
@@ -20,4 +21,5 @@ Future<void> init() async {
   getIt.registerFactory<HomeScreenController>(() => HomeScreenController());
   getIt.registerFactory<MainscreenController>(() => MainscreenController());
   getIt.registerFactory<DoctorcreenController>(() => DoctorcreenController());
+  getIt.registerFactory<DoctorInfoController>(() => DoctorInfoController());
 }

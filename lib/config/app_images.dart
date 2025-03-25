@@ -17,4 +17,17 @@ class AppImages {
   static const String star = 'assets/images/star.png';
   static const String heartfill = 'assets/images/fiil_heart.png';
   static const String questionMark = 'assets/images/question_marks.png';
+  static const String homeIcon = 'assets/images/home.png';
+  static const String messageIcon = 'assets/images/message.png';
+  static const String persoIcon = 'assets/images/person.png';
+  static const String calenderIcon = 'assets/images/calender.png';
+  static const String femalIcon = 'assets/images/female.png';
+  static const String starcon = 'assets/images/star1.png';
+  static const String maleIcon = 'assets/images/male.png';
+  static const String docPageimage = 'assets/images/docor_page.png';
+  static const String line = 'assets/images/Vector (6).png';
+  static const String calenderList = 'assets/images/Vector (5).png';
+  static const String heartList = 'assets/images/Vector 158 (Stroke) (1).png';
+  static const String docInfoCard = 'assets/images/doctor_info_image.png';
+  static const String tag = 'assets/images/tagimage.png';
 }

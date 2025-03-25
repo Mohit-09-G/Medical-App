@@ -34,6 +34,8 @@ class AppString {
   static const String sheduletime = '11 Wednesday - Today';
   static const String drName = 'Dr. Olivia Turner, M.D.';
   static const String drgenre = 'Dermato-Endocrinology';
+  static const String drAppbar = 'Doctors';
+  static const String sortBy = 'Sort by';
 
 //
 
@@ -41,7 +43,9 @@ class AppString {
       'We’re here to help you regain access to your account so you can continue your journey to a more balanced life.';
   static const String welcomLine =
       'Track your health, manage medical records, and receive personalized wellness tips. Our app helps you stay on top of your health with ease. ';
-
+  static String focus = 'Focus: ';
+  static String docFocus =
+      'The impact of hormonal imbalances on skin conditions, specializing in acne, hirsutism, and other skin disorders.';
   static const String loginScreentxt =
       'MediCare, your trusted companion in health and wellness. Our app provides personalized care,  more balanced life.';
 }
