@@ -1,5 +1,6 @@
 import 'package:get/route_manager.dart';
 import 'package:health_app/binding/docotor_screen/doctor_screen_binding.dart';
+import 'package:health_app/binding/doctor-rating/doctor_rating_binding.dart';
 import 'package:health_app/binding/forgotpassword/forgotassword_binding.dart';
 import 'package:health_app/binding/home/home_screen_binding.dart';
 import 'package:health_app/binding/login/login_screen_binding.dart';
@@ -11,6 +12,7 @@ import 'package:health_app/config/app_routes.dart';
 
 import 'package:health_app/presentaion/mainscreen/mainscreen.dart';
 import 'package:health_app/presentaion/screens/doctor-info/doctor_info_screen.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor_rating/doctors_rating.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/doctor_screen.dart';
 import 'package:health_app/presentaion/screens/forgetpassword/forgetpassword_screeen.dart';
 import 'package:health_app/presentaion/screens/home/home_screen.dart';
@@ -56,6 +58,10 @@ class AppPages {
     GetPage(
         name: AppRoutes.docInfo,
         page: () => DoctorInfoScreen(),
-        binding: DoctorScreenBinding())
+        binding: DoctorScreenBinding()),
+    GetPage(
+        name: AppRoutes.docRating,
+        page: () => DoctorsRating(),
+        binding: DoctorRatingBinding())
   ];
 }

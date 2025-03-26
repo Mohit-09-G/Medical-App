@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
+import 'package:health_app/presentaion/controller/doctorscreen/doctorcreen_controller.dart';
+
 import 'package:health_app/presentaion/screens/doctorscreens/widget/doctor_icon_back.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/widget/sort_icon_container.dart';
 
-class FilterSettingRow extends StatelessWidget {
+class FilterSettingRow extends StatefulWidget {
   const FilterSettingRow({super.key});
 
+  @override
+  State<FilterSettingRow> createState() => _FilterSettingRowState();
+}
+
+DoctorcreenController controller = DoctorcreenController();
+
+class _FilterSettingRowState extends State<FilterSettingRow> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +32,12 @@ class FilterSettingRow extends StatelessWidget {
               textStyle: CustomTextStyle.size12white,
               name: "A->Z",
             ),
-            DoctorIconBack(iconAssetPath: AppImages.starcon),
+            DoctorIconBack(
+              iconAssetPath: AppImages.starcon,
+              ontap: () {
+                controller.navigateToRating();
+              },
+            ),
             DoctorIconBack(iconAssetPath: AppImages.heart),
             DoctorIconBack(iconAssetPath: AppImages.maleIcon),
             DoctorIconBack(iconAssetPath: AppImages.femalIcon),

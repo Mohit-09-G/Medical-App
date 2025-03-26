@@ -116,6 +116,12 @@ class CustomTextStyle {
     color: AppColors.black,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle size13whiteW3 = GoogleFonts.leagueSpartan(
+    fontSize: 14.0,
+    height: 1,
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+  );
 
   static TextStyle size12black = GoogleFonts.leagueSpartan(
     fontSize: 14.0,
@@ -128,6 +134,18 @@ class CustomTextStyle {
     height: 1,
     color: AppColors.white,
     fontWeight: FontWeight.w500,
+  );
+  static TextStyle size12whitew300 = GoogleFonts.leagueSpartan(
+    fontSize: 14.0,
+    height: 1,
+    color: AppColors.white,
+    fontWeight: FontWeight.w300,
+  );
+  static TextStyle size12whitebold = GoogleFonts.leagueSpartan(
+    fontSize: 14.0,
+    height: 1,
+    color: AppColors.white,
+    fontWeight: FontWeight.w700,
   );
 
   static TextStyle size12blue = GoogleFonts.leagueSpartan(

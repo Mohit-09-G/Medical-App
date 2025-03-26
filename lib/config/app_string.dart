@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppString {
   static const String appname = 'Skin';
   static const String appname1 = 'Firts';
@@ -22,6 +24,7 @@ class AppString {
   static const String textsignscreen = 'By continuing, you agree to ';
   static const String privacy = 'Privacy Policy.';
   static const String and = 'and ';
+  static const String exp = 'experience';
   static const String term = 'Terms of Use ';
   static const String setpassword = 'Set Password';
   static const String createPasswordtxt = 'Create New Password';
@@ -36,6 +39,14 @@ class AppString {
   static const String drgenre = 'Dermato-Endocrinology';
   static const String drAppbar = 'Doctors';
   static const String sortBy = 'Sort by';
+  static const String yr15 = '15 years';
+  static const String profile = 'Profile';
+  static const String highlight = 'Highlights';
+  static const String careerpath = 'Career path';
+  static const String professional = 'Professional Doctor';
+  static const String profileText =
+      'compassionate primary care for adults, specializing in preventive medicine, chronic disease management, and evidence-based treatment plans. With over 12 years of clinical experience, she believes in building long-term relationships with patients through clear communication and';
+  static const String nameAndedu = 'Dr. Alexander Bennett, Ph.D.';
 
 //
 

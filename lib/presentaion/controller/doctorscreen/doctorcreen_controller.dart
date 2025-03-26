@@ -128,4 +128,8 @@ class DoctorcreenController extends GetxController {
   void navigateToInfo() {
     Get.toNamed(AppRoutes.docInfo);
   }
+
+  void navigateToRating() {
+    Get.toNamed(AppRoutes.docRating);
+  }
 }
