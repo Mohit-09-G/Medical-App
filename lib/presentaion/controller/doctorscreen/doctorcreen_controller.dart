@@ -132,4 +132,12 @@ class DoctorcreenController extends GetxController {
   void navigateToRating() {
     Get.toNamed(AppRoutes.docRating);
   }
+
+  void navigateToFav() {
+    Get.toNamed(AppRoutes.docFav);
+  }
+
+  void navigateTOback() {
+    Get.back();
+  }
 }

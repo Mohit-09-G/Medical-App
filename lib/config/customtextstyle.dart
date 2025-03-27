@@ -8,6 +8,11 @@ class CustomTextStyle {
     color: Colors.black,
     fontWeight: FontWeight.normal,
   );
+  static TextStyle size16white = GoogleFonts.leagueSpartan(
+    fontSize: 16.0,
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+  );
 
   static TextStyle size24blue = GoogleFonts.leagueSpartan(
     fontSize: 24.0,
@@ -20,6 +25,12 @@ class CustomTextStyle {
     height: 1,
     color: AppColors.bluemain,
     fontWeight: FontWeight.w700,
+  );
+  static TextStyle size24blackw600 = GoogleFonts.leagueSpartan(
+    fontSize: 24.0,
+    height: 1,
+    color: AppColors.black,
+    fontWeight: FontWeight.w600,
   );
 
   static TextStyle size48blue = GoogleFonts.leagueSpartan(
@@ -55,11 +66,21 @@ class CustomTextStyle {
     color: AppColors.black,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle size20white = GoogleFonts.leagueSpartan(
+    fontSize: 20.0,
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle size20hint = GoogleFonts.leagueSpartan(
     fontSize: 20.0,
     height: 0.01,
     color: AppColors.textFiledblue,
     fontWeight: FontWeight.w400,
+  );
+  static TextStyle size20blueclik = GoogleFonts.leagueSpartan(
+    fontSize: 20.0,
+    color: AppColors.bluemain,
+    fontWeight: FontWeight.w500,
   );
   static TextStyle size20blue = GoogleFonts.leagueSpartan(
     fontSize: 20.0,
@@ -86,6 +107,13 @@ class CustomTextStyle {
     fontWeight: FontWeight.w600,
     fontSize: 15,
   );
+  static TextStyle size15whiteW400 = GoogleFonts.leagueSpartan(
+    color: AppColors.white,
+    letterSpacing: 0,
+    height: 1,
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+  );
 
   static TextStyle size14 = GoogleFonts.leagueSpartan(
     fontSize: 17.0,
@@ -109,6 +137,12 @@ class CustomTextStyle {
     height: 1,
     color: AppColors.black,
     fontWeight: FontWeight.w600,
+  );
+  static TextStyle size13blackw200 = GoogleFonts.leagueSpartan(
+    fontSize: 13.0,
+    height: 1,
+    color: AppColors.black,
+    fontWeight: FontWeight.w300,
   );
   static TextStyle size13blackW3 = GoogleFonts.leagueSpartan(
     fontSize: 14.0,

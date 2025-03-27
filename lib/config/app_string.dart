@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class AppString {
   static const String appname = 'Skin';
   static const String appname1 = 'Firts';
@@ -43,6 +41,7 @@ class AppString {
   static const String profile = 'Profile';
   static const String highlight = 'Highlights';
   static const String careerpath = 'Career path';
+  static const String profilename = 'John Doe';
   static const String professional = 'Professional Doctor';
   static const String profileText =
       'compassionate primary care for adults, specializing in preventive medicine, chronic disease management, and evidence-based treatment plans. With over 12 years of clinical experience, she believes in building long-term relationships with patients through clear communication and';

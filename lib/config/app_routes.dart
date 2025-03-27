@@ -9,4 +9,6 @@ class AppRoutes {
   static const String doctorScreen = '/doctor';
   static const String docInfo = '/doctorInfo';
   static const String docRating = '/doctorRating';
+  static const String docFav = '/doctorFavourite';
+  static const String profileScreen = '/profileScreen';
 }

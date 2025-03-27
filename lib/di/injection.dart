@@ -1,11 +1,13 @@
 import 'package:get_it/get_it.dart';
 import 'package:health_app/presentaion/controller/doctor-info/doctor_info_controller.dart';
+import 'package:health_app/presentaion/controller/doctor_favourite/doctor_favourite_controller.dart';
 import 'package:health_app/presentaion/controller/doctorratingscreen/doctor_rating_controller.dart';
 import 'package:health_app/presentaion/controller/doctorscreen/doctorcreen_controller.dart';
 import 'package:health_app/presentaion/controller/forgetpassword/forgetpassword_controller.dart';
 import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
 import 'package:health_app/presentaion/controller/login/login_screen_controller.dart';
 import 'package:health_app/presentaion/controller/mainscreen/mainscreen_controller.dart';
+import 'package:health_app/presentaion/controller/profilescreen/profile_screen_controller.dart';
 import 'package:health_app/presentaion/controller/signup/signup_controller.dart';
 import 'package:health_app/presentaion/controller/splash/splash_cotroller.dart';
 import 'package:health_app/presentaion/controller/welcome/welcomescreen_controller.dart';
@@ -24,4 +26,8 @@ Future<void> init() async {
   getIt.registerFactory<DoctorcreenController>(() => DoctorcreenController());
   getIt.registerFactory<DoctorInfoController>(() => DoctorInfoController());
   getIt.registerFactory<DoctorRatingController>(() => DoctorRatingController());
+  getIt.registerFactory<DoctorFavouriteController>(
+      () => DoctorFavouriteController());
+  getIt.registerFactory<ProfileScreenController>(
+      () => ProfileScreenController());
 }

@@ -38,7 +38,12 @@ class _FilterSettingRowState extends State<FilterSettingRow> {
                 controller.navigateToRating();
               },
             ),
-            DoctorIconBack(iconAssetPath: AppImages.heart),
+            DoctorIconBack(
+              iconAssetPath: AppImages.heart,
+              ontap: () {
+                controller.navigateToFav();
+              },
+            ),
             DoctorIconBack(iconAssetPath: AppImages.maleIcon),
             DoctorIconBack(iconAssetPath: AppImages.femalIcon),
           ],

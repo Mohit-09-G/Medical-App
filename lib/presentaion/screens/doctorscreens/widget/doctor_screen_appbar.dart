@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/customtextstyle.dart';
+
+import 'package:health_app/presentaion/controller/doctorscreen/doctorcreen_controller.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/widget/doctor_icon_back.dart';
 
-class DoctorScreenAppbar extends StatelessWidget {
+class DoctorScreenAppbar extends StatefulWidget {
   final String apbarName;
 
   const DoctorScreenAppbar({super.key, required this.apbarName});
+
+  @override
+  State<DoctorScreenAppbar> createState() => _DoctorScreenAppbarState();
+}
+
+class _DoctorScreenAppbarState extends State<DoctorScreenAppbar> {
+  DoctorcreenController controller = Get.put(DoctorcreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +29,14 @@ class DoctorScreenAppbar extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  color: AppColors.bluemain,
+                InkWell(
+                  onTap: () {
+                    controller.navigateTOback();
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: AppColors.bluemain,
+                  ),
                 ),
               ],
             ),
@@ -32,7 +47,7 @@ class DoctorScreenAppbar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  apbarName,
+                  widget.apbarName,
                   style: CustomTextStyle.size24blue,
                 )
               ],
