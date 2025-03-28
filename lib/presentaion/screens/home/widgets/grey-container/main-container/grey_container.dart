@@ -49,16 +49,13 @@ class _GreyContainerState extends State<GreyContainer> {
                     String getFormattedDayNumber =
                         controller.getFormattedDayNumber(date);
 
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: Row(
-                        children: [
-                          DateListItem(
-                            date: getFormattedDate,
-                            dayNum: getFormattedDayNumber,
-                          ),
-                        ],
-                      ),
+                    return Row(
+                      children: [
+                        DateListItem(
+                          date: getFormattedDate,
+                          dayNum: getFormattedDayNumber,
+                        ),
+                      ],
                     );
                   },
                 );

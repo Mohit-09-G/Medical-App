@@ -1,3 +1,4 @@
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_string.dart';
@@ -27,7 +28,7 @@ class SheduleContainer extends StatelessWidget {
                   child: Row(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 20),
+                        padding: EdgeInsets.only(left: 10),
                         child: Text(
                           AppString.sheduletime,
                           style: CustomTextStyle.size12blue,
@@ -44,24 +45,31 @@ class SheduleContainer extends StatelessWidget {
                 Column(
                   children: [
                     Text("11 AM"),
-                    Text("11 AM"),
-                    Text("11 AM"),
-                    Text("11 AM"),
+                    Text("12 AM"),
+                    Text("01 AM"),
+                    Text("02 AM"),
                   ],
                 ),
                 Column(
+                  spacing: 8,
                   children: [
-                    Row(
-                      children: [
-                        Text("--------------------------------------")
-                      ],
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      child: DottedLine(
+                        dashColor: AppColors.black,
+                        lineThickness: 0.5,
+                        dashGapLength: 1,
+                      ),
                     ),
                     TreatmentContainer(),
-                    Row(
-                      children: [
-                        Text("--------------------------------------")
-                      ],
-                    )
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      child: DottedLine(
+                        dashColor: AppColors.black,
+                        lineThickness: 0.5,
+                        dashGapLength: 1,
+                      ),
+                    ),
                   ],
                 )
               ],

@@ -11,4 +11,5 @@ class AppRoutes {
   static const String docRating = '/doctorRating';
   static const String docFav = '/doctorFavourite';
   static const String profileScreen = '/profileScreen';
+  static const String updateProfile = '/updateProfile';
 }

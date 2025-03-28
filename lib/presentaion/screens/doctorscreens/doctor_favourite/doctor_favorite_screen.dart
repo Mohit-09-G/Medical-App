@@ -21,6 +21,7 @@ class _DoctorFavoriteScreenState extends State<DoctorFavoriteScreen> {
       Get.put(DoctorFavouriteController());
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       color: AppColors.white,
       child: SafeArea(
@@ -52,7 +53,8 @@ class _DoctorFavoriteScreenState extends State<DoctorFavoriteScreen> {
                                     .toggleFirstButtonState,
                                 child: BlueBaground(
                                   padding: EdgeInsets.symmetric(
-                                      vertical: 9, horizontal: 55),
+                                      vertical: 9,
+                                      horizontal: screenWidth * 0.12),
                                   color: doctorFavouriteController
                                           .isFirstButtonPressed.value
                                       ? AppColors.bluemain
@@ -77,7 +79,8 @@ class _DoctorFavoriteScreenState extends State<DoctorFavoriteScreen> {
                                     .toggleSecondButtonState,
                                 child: BlueBaground(
                                   padding: EdgeInsets.symmetric(
-                                      vertical: 9, horizontal: 55),
+                                      vertical: 9,
+                                      horizontal: screenWidth * 0.12),
                                   color: doctorFavouriteController
                                           .isSecondButtonPressed.value
                                       ? AppColors.bluemain

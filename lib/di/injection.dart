@@ -8,6 +8,7 @@ import 'package:health_app/presentaion/controller/home/home_screen_controller.da
 import 'package:health_app/presentaion/controller/login/login_screen_controller.dart';
 import 'package:health_app/presentaion/controller/mainscreen/mainscreen_controller.dart';
 import 'package:health_app/presentaion/controller/profilescreen/profile_screen_controller.dart';
+import 'package:health_app/presentaion/controller/profilescreen/updateProfile/update_profile_controller.dart';
 import 'package:health_app/presentaion/controller/signup/signup_controller.dart';
 import 'package:health_app/presentaion/controller/splash/splash_cotroller.dart';
 import 'package:health_app/presentaion/controller/welcome/welcomescreen_controller.dart';
@@ -30,4 +31,7 @@ Future<void> init() async {
       () => DoctorFavouriteController());
   getIt.registerFactory<ProfileScreenController>(
       () => ProfileScreenController());
+
+  getIt.registerFactory<UpdateProfileController>(
+      () => UpdateProfileController());
 }

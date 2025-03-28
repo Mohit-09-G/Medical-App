@@ -25,13 +25,17 @@ class DateListItem extends StatelessWidget {
         padding: const EdgeInsets.only(top: 7, bottom: 5, left: 8, right: 8),
         child: Column(
           children: [
-            Text(
-              dayNum,
-              style: CustomTextStyle.size24black,
+            Expanded(
+              child: Text(
+                dayNum,
+                style: CustomTextStyle.size24black,
+              ),
             ),
-            Text(
-              date,
-              style: CustomTextStyle.size12black,
+            Expanded(
+              child: Text(
+                date,
+                style: CustomTextStyle.size12black,
+              ),
             ),
           ],
         ),

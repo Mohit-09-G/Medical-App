@@ -36,4 +36,5 @@ class AppImages {
   static const String ratingDocimage = 'assets/images/doctor_image.png';
   static const String heartrating = 'assets/images/heart_rating.png';
   static const String logouticon = 'assets/images/logout.png';
+  static const String editIcon = 'assets/images/editicon.png';
 }

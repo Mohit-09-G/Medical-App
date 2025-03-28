@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
+import 'package:health_app/config/customtextstyle.dart';
 import 'package:health_app/presentaion/screens/home/widgets/white_baground_container.dart';
 
 class SearchContainer extends StatelessWidget {
@@ -15,20 +16,21 @@ class SearchContainer extends StatelessWidget {
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(23)),
       child: Padding(
-        padding: const EdgeInsets.only(top: 7, bottom: 7, left: 3, right: 10),
+        padding: const EdgeInsets.only(left: 2, right: 5),
         child: Row(
+          spacing: 4,
           children: [
+            WhiteBagroundContainer(
+              iconAssetPath: AppImages.filter,
+            ),
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  WhiteBagroundContainer(
-                    iconAssetPath: AppImages.filter,
+              child: TextField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
                   ),
-                  Image.asset(AppImages.search),
-                ],
-              ),
-            )
+                  style: CustomTextStyle.size12black),
+            ),
+            Image.asset(AppImages.search),
           ],
         ),
       ),

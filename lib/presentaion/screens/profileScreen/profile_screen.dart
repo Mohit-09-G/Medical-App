@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
+import 'package:health_app/presentaion/controller/profilescreen/profile_screen_controller.dart';
+
+import 'package:health_app/presentaion/screens/profileScreen/widgets/circular_blue_baground.dart';
 import 'package:health_app/presentaion/screens/profileScreen/widgets/profile_app_bar.dart';
 import 'package:health_app/presentaion/screens/profileScreen/widgets/profile_item_names.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  ProfileScreenController controller = Get.put(ProfileScreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +38,21 @@ class ProfileScreen extends StatelessWidget {
               Column(
                 spacing: 5,
                 children: [
-                  Image.asset(
-                    AppImages.ratingDocimage,
-                    height: 130,
+                  Stack(
+                    alignment: Alignment(1.0, 0.9),
+                    children: [
+                      Image.asset(
+                        AppImages.ratingDocimage,
+                        height: 130,
+                      ),
+                      Positioned(
+                          child: CircularBlueBackground(
+                              padding: EdgeInsets.all(6),
+                              name: Image.asset(
+                                AppImages.editIcon,
+                                height: 25,
+                              )))
+                    ],
                   ),
                   Text(
                     AppString.profilename,
@@ -41,24 +64,34 @@ class ProfileScreen extends StatelessWidget {
                 spacing: 15,
                 children: [
                   ProfileItemNames(
+                    ontap: () {
+                      controller.navigateToprofiledata();
+                      print("profile Page");
+                    },
                     name: 'Profile',
                   ),
                   ProfileItemNames(
+                    ontap: () {},
                     name: 'Favorite',
                   ),
                   ProfileItemNames(
+                    ontap: () {},
                     name: 'Payment Method',
                   ),
                   ProfileItemNames(
+                    ontap: () {},
                     name: 'Privacy Policy',
                   ),
                   ProfileItemNames(
+                    ontap: () {},
                     name: 'Settings',
                   ),
                   ProfileItemNames(
+                    ontap: () {},
                     name: 'Help',
                   ),
                   ProfileItemNames(
+                    ontap: () {},
                     name: 'Logout',
                   ),
                 ],

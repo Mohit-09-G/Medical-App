@@ -53,9 +53,11 @@ class DoctorCards extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Text(
-                                doctorname,
-                                style: CustomTextStyle.size15bluelist,
+                              Flexible(
+                                child: Text(
+                                  doctorname,
+                                  style: CustomTextStyle.size15bluelist,
+                                ),
                               ),
                             ],
                           ),

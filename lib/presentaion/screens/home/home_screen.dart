@@ -22,58 +22,69 @@ class _HomeScreenState extends State<HomeScreen> {
   HomeScreenController controller = Get.put(HomeScreenController());
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(70), child: HomeAppBar()),
-      body: Column(
-        spacing: 20,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 10, right: 20),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    spacing: 5,
-                    children: [
-                      Image.asset(AppImages.doctor),
-                      Text(
-                        AppString.doctor,
-                        style: CustomTextStyle.size12blue,
-                      )
-                    ],
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    spacing: 5,
-                    children: [
-                      Image.asset(AppImages.heart),
-                      Text(
-                        AppString.favourite,
-                        style: CustomTextStyle.size12blue,
-                      )
-                    ],
-                  ),
-                ),
-                Expanded(
-                    flex: 4,
+      body: SingleChildScrollView(
+        child: Column(
+          spacing: 20,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 10),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      spacing: 5,
                       children: [
-                        SearchContainer(),
+                        Image.asset(AppImages.doctor),
+                        Text(
+                          AppString.doctor,
+                          style: CustomTextStyle.size12blue,
+                        )
                       ],
-                    ))
-              ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      spacing: 5,
+                      children: [
+                        Image.asset(AppImages.heart),
+                        Text(
+                          AppString.favourite,
+                          style: CustomTextStyle.size12blue,
+                        )
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                      flex: 4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          SearchContainer(),
+                        ],
+                      ))
+                ],
+              ),
             ),
-          ),
-          Expanded(flex: 1, child: GreyContainer()),
-          Expanded(flex: 2, child: WhiteContainer())
-        ],
+            Container(
+              color: AppColors.white,
+              height: screenHeight * 3.3 / 12,
+              child: GreyContainer(),
+            ),
+            Container(
+              color: AppColors.white,
+              height: screenHeight * 4.76 / 12,
+              child: WhiteContainer(),
+            ),
+          ],
+        ),
       ),
     );
   }

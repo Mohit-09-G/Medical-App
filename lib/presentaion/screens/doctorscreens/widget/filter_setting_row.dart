@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
@@ -28,24 +30,79 @@ class _FilterSettingRowState extends State<FilterSettingRow> {
               AppString.sortBy,
               style: CustomTextStyle.size12black,
             ),
-            SortIconContainer(
-              textStyle: CustomTextStyle.size12white,
-              name: "A->Z",
+            Obx(
+              () => SortIconContainer(
+                onTap: () {
+                  controller.updateSelectedIndex(0);
+                  controller.navigateTodoctor();
+                },
+                color: controller.selectedIndex.value == 0
+                    ? AppColors.bluemain
+                    : AppColors.grey,
+                textStyle: controller.selectedIndex.value == 0
+                    ? CustomTextStyle.size12white
+                    : CustomTextStyle.size12blue,
+                name: "A->Z",
+              ),
             ),
-            DoctorIconBack(
-              iconAssetPath: AppImages.starcon,
-              ontap: () {
-                controller.navigateToRating();
-              },
+            Obx(
+              () => DoctorIconBack(
+                iconAssetPath: AppImages.starcon,
+                imagecolor: controller.selectedIndex.value == 1
+                    ? AppColors.white
+                    : AppColors.bluemain,
+                ontap: () {
+                  controller.updateSelectedIndex(1);
+                  controller.navigateToRating();
+                },
+                color: controller.selectedIndex.value == 1
+                    ? AppColors.bluemain
+                    : AppColors.grey,
+              ),
             ),
-            DoctorIconBack(
-              iconAssetPath: AppImages.heart,
-              ontap: () {
-                controller.navigateToFav();
-              },
+            Obx(
+              () => DoctorIconBack(
+                imagecolor: controller.selectedIndex.value == 2
+                    ? AppColors.white
+                    : AppColors.bluemain,
+                iconAssetPath: AppImages.heart,
+                ontap: () {
+                  controller.updateSelectedIndex(2);
+                  controller.navigateToFav();
+                },
+                color: controller.selectedIndex.value == 2
+                    ? AppColors.bluemain
+                    : AppColors.grey,
+              ),
             ),
-            DoctorIconBack(iconAssetPath: AppImages.maleIcon),
-            DoctorIconBack(iconAssetPath: AppImages.femalIcon),
+            Obx(
+              () => DoctorIconBack(
+                imagecolor: controller.selectedIndex.value == 3
+                    ? AppColors.white
+                    : AppColors.bluemain,
+                iconAssetPath: AppImages.maleIcon,
+                ontap: () {
+                  controller.updateSelectedIndex(3);
+                },
+                color: controller.selectedIndex.value == 3
+                    ? AppColors.bluemain
+                    : AppColors.grey,
+              ),
+            ),
+            Obx(
+              () => DoctorIconBack(
+                imagecolor: controller.selectedIndex.value == 4
+                    ? AppColors.white
+                    : AppColors.bluemain,
+                iconAssetPath: AppImages.femalIcon,
+                ontap: () {
+                  controller.updateSelectedIndex(4);
+                },
+                color: controller.selectedIndex.value == 4
+                    ? AppColors.bluemain
+                    : AppColors.grey,
+              ),
+            ),
           ],
         ),
         Expanded(child: SizedBox())

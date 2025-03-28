@@ -32,6 +32,12 @@ class CustomTextStyle {
     color: AppColors.black,
     fontWeight: FontWeight.w600,
   );
+  static TextStyle size24white500 = GoogleFonts.leagueSpartan(
+    fontSize: 24.0,
+    height: 1,
+    color: AppColors.white,
+    fontWeight: FontWeight.w500,
+  );
 
   static TextStyle size48blue = GoogleFonts.leagueSpartan(
     fontSize: 48.0,

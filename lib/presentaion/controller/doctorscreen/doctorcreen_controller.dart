@@ -125,6 +125,12 @@ class DoctorcreenController extends GetxController {
     },
   ].obs;
 
+  RxInt selectedIndex = 0.obs;
+
+  void updateSelectedIndex(int index) {
+    selectedIndex.value = index;
+  }
+
   void navigateToInfo() {
     Get.toNamed(AppRoutes.docInfo);
   }
@@ -135,6 +141,10 @@ class DoctorcreenController extends GetxController {
 
   void navigateToFav() {
     Get.toNamed(AppRoutes.docFav);
+  }
+
+  void navigateTodoctor() {
+    Get.toNamed(AppRoutes.doctorScreen);
   }
 
   void navigateTOback() {
