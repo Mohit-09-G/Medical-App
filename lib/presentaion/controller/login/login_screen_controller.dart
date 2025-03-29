@@ -42,7 +42,7 @@ class LoginScreenController extends GetxController {
   }
 
   void navigateToHome() {
-    Get.offAllNamed(AppRoutes.homescreen);
+    Get.offAllNamed(AppRoutes.mainScreen);
   }
 
   void togglePasswordVisibility() {

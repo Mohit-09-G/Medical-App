@@ -38,6 +38,7 @@ dependencies:
   get_it: ^8.0.3
   google_fonts: ^6.2.1
   intl: ^0.20.2
+  dotted_line: ^3.2.3
 
 dev_dependencies:
   flutter_test:
@@ -77,10 +78,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: LeagueSpartan
-      fonts:
-        - asset: assets/fonts/LeagueSpartan-VariableFont_wght.ttf
+  # fonts:
+  #   - family: LeagueSpartan
+  #     fonts:
+  #       - asset: assets/fonts/LeagueSpartan-VariableFont_wght.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
