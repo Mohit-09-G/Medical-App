@@ -47,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
+                color: AppColors.white,
                 height: screenHeight * 1.3 / 6,
                 child: Column(
                   spacing: 6,
@@ -80,6 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Container(
+                color: AppColors.white,
                 height: screenHeight * 2 / 6,
                 child: Column(
                   spacing: 6,
@@ -160,6 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Container(
+                color: AppColors.white,
                 height: screenHeight * 2 / 6,
                 child: Column(
                   spacing: 15,

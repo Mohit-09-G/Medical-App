@@ -5,7 +5,7 @@ import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
 import 'package:health_app/presentaion/controller/profilescreen/updateProfile/update_profile_controller.dart';
-import 'package:health_app/presentaion/screens/doctor-info/widget/blue_baground.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor-info/widget/blue_baground.dart';
 import 'package:health_app/presentaion/screens/login/widgets/custom_input_text_field.dart';
 import 'package:health_app/presentaion/screens/login/widgets/datecustomfiled.dart';
 import 'package:health_app/presentaion/screens/profileScreen/widgets/circular_blue_baground.dart';

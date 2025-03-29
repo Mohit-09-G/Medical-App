@@ -66,33 +66,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ProfileItemNames(
                     ontap: () {
                       controller.navigateToprofiledata();
-                      print("profile Page");
                     },
-                    name: 'Profile',
+                    name: AppString.profiletxt,
                   ),
                   ProfileItemNames(
                     ontap: () {},
-                    name: 'Favorite',
+                    name: AppString.favorite,
                   ),
                   ProfileItemNames(
                     ontap: () {},
-                    name: 'Payment Method',
+                    name: AppString.paymentMethod,
                   ),
                   ProfileItemNames(
                     ontap: () {},
-                    name: 'Privacy Policy',
+                    name: AppString.privacyPolicy,
                   ),
                   ProfileItemNames(
                     ontap: () {},
-                    name: 'Settings',
+                    name: AppString.settings,
                   ),
                   ProfileItemNames(
                     ontap: () {},
-                    name: 'Help',
+                    name: AppString.help,
                   ),
                   ProfileItemNames(
                     ontap: () {},
-                    name: 'Logout',
+                    name: AppString.logout,
                   ),
                 ],
               ),

@@ -58,4 +58,12 @@ class AppString {
       'The impact of hormonal imbalances on skin conditions, specializing in acne, hirsutism, and other skin disorders.';
   static const String loginScreentxt =
       'MediCare, your trusted companion in health and wellness. Our app provides personalized care,  more balanced life.';
+
+  static const String profiletxt = 'Profile';
+  static const String favorite = 'Favorite';
+  static const String paymentMethod = 'Payment Method';
+  static const String privacyPolicy = 'Privacy Policy';
+  static const String settings = 'Settings';
+  static const String help = 'Help';
+  static const String logout = 'Logout';
 }

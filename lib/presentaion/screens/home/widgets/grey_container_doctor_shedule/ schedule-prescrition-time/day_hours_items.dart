@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/prescription-card/treatment_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey_container_doctor_shedule/prescription-card/treatment_container.dart';
 
 class SheduleContainer extends StatelessWidget {
   const SheduleContainer({super.key});
@@ -54,6 +54,7 @@ class SheduleContainer extends StatelessWidget {
                   spacing: 8,
                   children: [
                     Container(
+                      color: AppColors.white,
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: DottedLine(
                         dashColor: AppColors.black,
@@ -63,6 +64,7 @@ class SheduleContainer extends StatelessWidget {
                     ),
                     TreatmentContainer(),
                     Container(
+                      color: AppColors.white,
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: DottedLine(
                         dashColor: AppColors.black,

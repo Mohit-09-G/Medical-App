@@ -6,10 +6,10 @@ import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
 import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
 
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/main-container/grey_container.dart';
-import 'package:health_app/presentaion/screens/home/widgets/topfeatures/home_app_bar.dart';
-import 'package:health_app/presentaion/screens/home/widgets/topfeatures/search_container.dart';
-import 'package:health_app/presentaion/screens/home/widgets/doctor_lists/white_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey_container_doctor_shedule/main-container/doctor_shedule_container_grey.dart';
+import 'package:health_app/presentaion/screens/home/widgets/widgets/home_app_bar.dart';
+import 'package:health_app/presentaion/screens/home/widgets/widgets/search_container.dart';
+import 'package:health_app/presentaion/screens/home/widgets/doctor_lists/doctor_list_container.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -76,12 +76,12 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               color: AppColors.white,
               height: screenHeight * 3.3 / 12,
-              child: GreyContainer(),
+              child: DoctorSheduleContainerGrey(),
             ),
             Container(
               color: AppColors.white,
               height: screenHeight * 4.76 / 12,
-              child: WhiteContainer(),
+              child: DoctorListContainer(),
             ),
           ],
         ),

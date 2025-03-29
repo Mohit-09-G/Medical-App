@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/%20schedule-prescrition-time/day_hours_items.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/main-container/week_time_timeline.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey_container_doctor_shedule/%20schedule-prescrition-time/day_hours_items.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey_container_doctor_shedule/main-container/week_time_timeline.dart';
 
-class GreyContainer extends StatefulWidget {
-  const GreyContainer({super.key});
+class DoctorSheduleContainerGrey extends StatefulWidget {
+  const DoctorSheduleContainerGrey({super.key});
 
   @override
-  State<GreyContainer> createState() => _GreyContainerState();
+  State<DoctorSheduleContainerGrey> createState() =>
+      _DoctorSheduleContainerGrey();
 }
 
-class _GreyContainerState extends State<GreyContainer> {
+class _DoctorSheduleContainerGrey extends State<DoctorSheduleContainerGrey> {
   late HomeScreenController controller;
 
   @override

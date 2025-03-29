@@ -3,7 +3,7 @@ import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
 import 'package:health_app/presentaion/mainscreen/widgets/bottom_bar.dart';
-import 'package:health_app/presentaion/screens/doctor-info/widget/doctor_info_card.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor-info/widget/doctor_info_card.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/widget/doctor_screen_appbar.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/widget/filter_setting_row.dart';
 

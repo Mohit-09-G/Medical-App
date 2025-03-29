@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/customtextstyle.dart';
-import 'package:health_app/presentaion/screens/doctor-info/widget/blue_baground.dart';
-import 'package:health_app/presentaion/screens/doctor-info/widget/white_baground_container.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor-info/widget/blue_baground.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor-info/widget/white_baground_container.dart';
 import 'package:health_app/presentaion/screens/doctorscreens/doctor_favourite/widgets/drop_list_container.dart';
 
 class DroplistDoctorFavourite extends StatelessWidget {

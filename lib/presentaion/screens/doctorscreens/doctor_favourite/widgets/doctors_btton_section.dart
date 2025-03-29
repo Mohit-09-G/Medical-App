@@ -3,8 +3,8 @@ import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
-import 'package:health_app/presentaion/screens/doctor-info/widget/blue_baground.dart';
-import 'package:health_app/presentaion/screens/doctor-info/widget/white_baground_container.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor-info/widget/blue_baground.dart';
+import 'package:health_app/presentaion/screens/doctorscreens/doctor-info/widget/white_baground_container.dart';
 
 class DoctorsBttonSection extends StatelessWidget {
   final String doctorname;

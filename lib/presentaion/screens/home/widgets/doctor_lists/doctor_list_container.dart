@@ -4,14 +4,14 @@ import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
 import 'package:health_app/presentaion/screens/home/widgets/doctor_lists/doctor_data_card/grey_container.dart';
 
-class WhiteContainer extends StatefulWidget {
-  const WhiteContainer({super.key});
+class DoctorListContainer extends StatefulWidget {
+  const DoctorListContainer({super.key});
 
   @override
-  State<WhiteContainer> createState() => _WhiteContainerState();
+  State<DoctorListContainer> createState() => _DoctorListContainer();
 }
 
-class _WhiteContainerState extends State<WhiteContainer> {
+class _DoctorListContainer extends State<DoctorListContainer> {
   late HomeScreenController controller;
 
   @override
