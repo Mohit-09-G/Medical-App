@@ -4,7 +4,7 @@ import 'package:health_app/config/app_images.dart';
 
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
-import 'package:health_app/presentaion/screens/home/widgets/grey-container/prescription-card/icons_baground.dart';
+import 'package:health_app/presentaion/screens/home/widgets/grey_container_doctor_shedule/prescription-card/icons_baground.dart';
 
 class TreatmentContainer extends StatelessWidget {
   const TreatmentContainer({super.key});

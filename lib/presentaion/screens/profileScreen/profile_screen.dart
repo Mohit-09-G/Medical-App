@@ -64,32 +64,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 spacing: 15,
                 children: [
                   ProfileItemNames(
+                    images: AppImages.profileIcon,
                     ontap: () {
                       controller.navigateToprofiledata();
                     },
                     name: AppString.profiletxt,
                   ),
                   ProfileItemNames(
+                    images: AppImages.heart,
                     ontap: () {},
                     name: AppString.favorite,
                   ),
                   ProfileItemNames(
+                    images: AppImages.walletIcon,
                     ontap: () {},
                     name: AppString.paymentMethod,
                   ),
                   ProfileItemNames(
+                    images: AppImages.privacyIcon,
                     ontap: () {},
                     name: AppString.privacyPolicy,
                   ),
                   ProfileItemNames(
+                    images: AppImages.settingIcon,
                     ontap: () {},
                     name: AppString.settings,
                   ),
                   ProfileItemNames(
+                    images: AppImages.helpIcon,
                     ontap: () {},
                     name: AppString.help,
                   ),
                   ProfileItemNames(
+                    images: AppImages.logouticon,
                     ontap: () {},
                     name: AppString.logout,
                   ),

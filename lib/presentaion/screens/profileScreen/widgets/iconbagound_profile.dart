@@ -26,6 +26,7 @@ class IconbagoundProfile extends StatelessWidget {
             child: Image.asset(
               iconAssetPath,
               height: 20,
+              width: 20,
             ),
           ),
         ),

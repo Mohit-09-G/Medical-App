@@ -37,4 +37,9 @@ class AppImages {
   static const String heartrating = 'assets/images/heart_rating.png';
   static const String logouticon = 'assets/images/logout.png';
   static const String editIcon = 'assets/images/editicon.png';
+  static const String walletIcon = 'assets/images/wallet_icon.png';
+  static const String settingIcon = 'assets/images/setting_icons.png';
+  static const String profileIcon = 'assets/images/profile_icons.png';
+  static const String privacyIcon = 'assets/images/privacy_icon.png';
+  static const String helpIcon = 'assets/images/privacy_icon.png';
 }

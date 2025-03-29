@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/config/app_colors.dart';
-import 'package:health_app/config/app_images.dart';
+
 import 'package:health_app/config/customtextstyle.dart';
 
 import 'package:health_app/presentaion/screens/profileScreen/widgets/iconbagound_profile.dart';
@@ -8,7 +8,12 @@ import 'package:health_app/presentaion/screens/profileScreen/widgets/iconbagound
 class ProfileItemNames extends StatelessWidget {
   final VoidCallback ontap;
   final String name;
-  const ProfileItemNames({super.key, required this.name, required this.ontap});
+  final String images;
+  const ProfileItemNames(
+      {super.key,
+      required this.name,
+      required this.ontap,
+      required this.images});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,7 @@ class ProfileItemNames extends StatelessWidget {
             spacing: 10,
             children: [
               IconbagoundProfile(
-                iconAssetPath: AppImages.logouticon,
+                iconAssetPath: images,
               ),
               Text(
                 name,

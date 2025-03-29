@@ -27,7 +27,7 @@ class BottomBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(24),
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildIconButton(AppImages.homeIcon, 0, controller),
               _buildIconButton(AppImages.messageIcon, 1, controller),

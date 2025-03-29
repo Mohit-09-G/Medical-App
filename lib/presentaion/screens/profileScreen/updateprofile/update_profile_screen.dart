@@ -26,7 +26,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(40), child: SizedBox.shrink()),
+          preferredSize: Size.fromHeight(70), child: SizedBox.shrink()),
       body: SingleChildScrollView(
         child: Column(
           children: [

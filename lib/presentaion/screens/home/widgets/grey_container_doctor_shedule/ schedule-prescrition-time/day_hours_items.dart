@@ -43,11 +43,15 @@ class SheduleContainer extends StatelessWidget {
               spacing: 10,
               children: [
                 Column(
+                  spacing: 4,
                   children: [
-                    Text("11 AM"),
-                    Text("12 AM"),
-                    Text("01 AM"),
-                    Text("02 AM"),
+                    Text(
+                      "11 AM",
+                      style: CustomTextStyle.size12blue,
+                    ),
+                    Text("12 AM", style: CustomTextStyle.size12blue),
+                    Text("01 AM", style: CustomTextStyle.size12blue),
+                    Text("02 AM", style: CustomTextStyle.size12blue),
                   ],
                 ),
                 Column(
@@ -57,7 +61,7 @@ class SheduleContainer extends StatelessWidget {
                       color: AppColors.white,
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: DottedLine(
-                        dashColor: AppColors.black,
+                        dashColor: AppColors.bluemain,
                         lineThickness: 0.5,
                         dashGapLength: 1,
                       ),
@@ -67,7 +71,7 @@ class SheduleContainer extends StatelessWidget {
                       color: AppColors.white,
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: DottedLine(
-                        dashColor: AppColors.black,
+                        dashColor: AppColors.bluemain,
                         lineThickness: 0.5,
                         dashGapLength: 1,
                       ),

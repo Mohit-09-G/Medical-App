@@ -66,7 +66,7 @@ class DoctorInfoCard extends StatelessWidget {
                           )),
                       BlueBaground(
                           margin: EdgeInsets.symmetric(
-                              vertical: 00, horizontal: 20),
+                              vertical: 00, horizontal: 22),
                           name: RichText(
                               text: TextSpan(
                                   text: AppString.focus,

@@ -83,7 +83,7 @@ class DoctorsBttonSection extends StatelessWidget {
                               ),
                               Image.asset(
                                 AppImages.heartrating,
-                                height: 15,
+                                height: 20,
                               )
                             ],
                           )),

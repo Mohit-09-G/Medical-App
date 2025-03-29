@@ -25,7 +25,7 @@ class DoctorInfoScreen extends StatelessWidget {
             child: Column(
               children: [
                 DoctorScreenAppbar(
-                  apbarName: "Info",
+                  apbarName: "Doctor Info",
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 23, right: 35),

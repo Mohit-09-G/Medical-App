@@ -14,12 +14,7 @@ class DateListItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
-        ),
+        borderRadius: BorderRadius.all(Radius.circular(30)),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 7, bottom: 5, left: 8, right: 8),
