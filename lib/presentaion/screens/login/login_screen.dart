@@ -179,8 +179,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               textColor: AppColors.white,
                               onTap: () {
                                 if (controller.isFormValid.value) {
-                                  Get.snackbar('Login', 'Succesfully Login');
-                                  controller.navigateToHome();
+                                  // Get.snackbar('Login', 'Succesfully Login');
+                                  // controller.navigateToHome();
+                                  controller.signInWithEmailAndPassword(
+                                      controller.emailController.text.trim(),
+                                      controller.passwordController.text
+                                          .trim());
                                   controller.clearAllFields();
                                 } else {
                                   Get.snackbar('Validation Error',

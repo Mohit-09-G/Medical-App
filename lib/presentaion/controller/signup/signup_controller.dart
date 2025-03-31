@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_routes.dart';
 import 'package:health_app/config/validator_case.dart';
+import 'package:health_app/domain/usecases/create_account_usecases.dart';
 
 class SignupController extends GetxController {
+  final CreateAccountUsecases createAccountUsecases;
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
@@ -19,6 +21,8 @@ class SignupController extends GetxController {
   final RxBool isFormValid = false.obs;
 
   final RxBool obscurePassword = true.obs;
+
+  SignupController({required this.createAccountUsecases});
 
   void validateForm() {
     isFormValid.value = nameError.value.isEmpty &&
@@ -101,6 +105,33 @@ class SignupController extends GetxController {
           "${selectedDate.year.toString().substring(2)}";
 
       dateController.text = formattedDate;
+    }
+  }
+
+  Future<void> createAccount() async {
+    try {
+      final user = await createAccountUsecases.execute(
+          emailController.text, passwordController.text);
+
+      if (user != null) {
+        Get.offAllNamed(AppRoutes.loginScreen);
+        Get.snackbar("Success", 'Account Ceated Successfully');
+      } else {
+        Get.snackbar('error', 'Failed to Create account');
+      }
+    } catch (e) {
+      Get.snackbar('Error', e.toString());
+    }
+  }
+
+  RxString username = ''.obs;
+
+  void getUsename() {
+    if (nameController.text.isNotEmpty) {
+      username.value = nameController.text;
+      print("Username set to: ${username.value}");
+    } else {
+      print("NameController is empty");
     }
   }
 }

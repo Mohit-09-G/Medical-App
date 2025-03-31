@@ -97,7 +97,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   ProfileItemNames(
                     images: AppImages.logouticon,
-                    ontap: () {},
+                    ontap: () {
+                      controller.logout();
+                    },
                     name: AppString.logout,
                   ),
                 ],

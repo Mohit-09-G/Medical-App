@@ -265,8 +265,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 textColor: AppColors.white,
                                 onTap: () {
                                   if (controller.isFormValid.value) {
-                                    Get.snackbar(
-                                        'created', 'Succesfully Registred');
+                                    controller.getUsename();
+                                    controller.createAccount();
+                                    // Get.snackbar(
+                                    //     'created', 'Succesfully Registred');
                                     controller.clearAllFields();
                                   } else {
                                     Get.snackbar('Validation Error',

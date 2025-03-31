@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_routes.dart';
 import 'package:health_app/config/validator_case.dart';
+import 'package:health_app/domain/usecases/do_login_with_emailandpassword.dart';
 
 class LoginScreenController extends GetxController {
+  final DoLoginWithEmailandpassword doLoginWithEmailandpassword;
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final RxString emailError = RxString('');
@@ -11,6 +13,8 @@ class LoginScreenController extends GetxController {
 
   final RxBool isFormValid = false.obs;
   final RxBool obscurePassword = true.obs;
+
+  LoginScreenController({required this.doLoginWithEmailandpassword});
 
   void validateForm() {
     isFormValid.value = emailError.value.isEmpty &&
@@ -55,5 +59,22 @@ class LoginScreenController extends GetxController {
     passwordError.value = '';
     emailError.value = '';
     isFormValid.value = true;
+  }
+
+  Future<void> signInWithEmailAndPassword(
+      String username, String password) async {
+    try {
+      final result =
+          await doLoginWithEmailandpassword.execute(username, password);
+      if (result['success'] == true) {
+        Get.offAllNamed(AppRoutes.mainScreen);
+        Get.snackbar('success', 'signed in succefull');
+      } else {
+        Get.snackbar('fail', 'sign in fail');
+      }
+    } catch (e) {
+      Get.snackbar(
+          'Error', 'An error occurred while signing in: ${e.toString()}');
+    }
   }
 }

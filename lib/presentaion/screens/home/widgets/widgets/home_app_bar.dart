@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
+import 'package:health_app/di/injection.dart';
+import 'package:health_app/domain/usecases/create_account_usecases.dart';
+import 'package:health_app/presentaion/controller/signup/signup_controller.dart';
 import 'package:health_app/presentaion/screens/home/widgets/widgets/circular_baground.dart';
 
-class HomeAppBar extends StatelessWidget {
+class HomeAppBar extends StatefulWidget {
   const HomeAppBar({super.key});
 
+  @override
+  State<HomeAppBar> createState() => _HomeAppBarState();
+}
+
+class _HomeAppBarState extends State<HomeAppBar> {
+  SignupController signupController = Get.put(
+      SignupController(createAccountUsecases: getIt<CreateAccountUsecases>()));
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -28,7 +40,18 @@ class HomeAppBar extends StatelessWidget {
                     children: [
                       Text(AppString.appbarNamegreet,
                           style: CustomTextStyle.size12blue),
-                      Text(AppString.appbarName, style: CustomTextStyle.size14),
+                      Obx(
+                        () {
+                          String usernameText =
+                              signupController.username.value.isNotEmpty
+                                  ? signupController.username.value
+                                  : 'Please enter a username';
+                          return Text(
+                            usernameText,
+                            style: CustomTextStyle.size14,
+                          );
+                        },
+                      )
                     ],
                   ),
                 ],
