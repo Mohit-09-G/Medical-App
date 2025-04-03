@@ -5,6 +5,7 @@ import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
+import 'package:health_app/data/services/notification_services.dart';
 import 'package:health_app/di/injection.dart';
 import 'package:health_app/domain/usecases/create_account_usecases.dart';
 import 'package:health_app/presentaion/controller/signup/signup_controller.dart';
@@ -17,9 +18,16 @@ class HomeAppBar extends StatefulWidget {
   State<HomeAppBar> createState() => _HomeAppBarState();
 }
 
+SignupController controller = Get.put(
+    SignupController(createAccountUsecases: getIt<CreateAccountUsecases>()));
+
 class _HomeAppBarState extends State<HomeAppBar> {
-  SignupController signupController = Get.put(
-      SignupController(createAccountUsecases: getIt<CreateAccountUsecases>()));
+  @override
+  void initState() {
+    controller.getDisplayName();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -42,12 +50,10 @@ class _HomeAppBarState extends State<HomeAppBar> {
                           style: CustomTextStyle.size12blue),
                       Obx(
                         () {
-                          String usernameText =
-                              signupController.username.value.isNotEmpty
-                                  ? signupController.username.value
-                                  : 'Please enter a username';
+                          // controller.getDisplayName().toString();
+
                           return Text(
-                            usernameText,
+                            controller.username.value,
                             style: CustomTextStyle.size14,
                           );
                         },
@@ -63,8 +69,15 @@ class _HomeAppBarState extends State<HomeAppBar> {
                 spacing: 5,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  CircularBaground(
-                    iconAssetPath: AppImages.bellIcon,
+                  InkWell(
+                    onTap: () {
+                      NotificationServices().showNotification(
+                          body: "body", title: "title", id: 1);
+                      print("tap");
+                    },
+                    child: CircularBaground(
+                      iconAssetPath: AppImages.bellIcon,
+                    ),
                   ),
                   CircularBaground(iconAssetPath: AppImages.settingIcons)
                 ],

@@ -1,7 +1,22 @@
 import 'package:get/get.dart';
 import 'package:health_app/config/app_routes.dart';
+import 'package:health_app/data/api/doctor_service.dart';
+import 'package:health_app/data/models/usermodel.dart';
 
 class DoctorcreenController extends GetxController {
+  final DoctorService doctorService = DoctorService();
+
+  final RxList<DoctorsModel> doctorsList = RxList<DoctorsModel>();
+  final isLoading = false.obs;
+
+  @override
+  void onInit() {
+    print(doctorsList.length);
+    fetchDoctors();
+    uploadAllDoctors();
+    super.onInit();
+  }
+
   RxList doctors = [
     {
       'name': 'Dr. John Doe',
@@ -149,5 +164,37 @@ class DoctorcreenController extends GetxController {
 
   void navigateTOback() {
     Get.back();
+  }
+
+  Future<void> uploadAllDoctors() async {
+    try {
+      await doctorService.uploadDoctors();
+    } catch (e) {
+      print('Error uploading doctors: $e');
+    }
+  }
+
+  Future<void> fetchDoctors() async {
+    try {
+      isLoading.value = true;
+      await doctorService.downloadDoctors();
+      doctorsList.value = doctorService.doctorsList;
+      print(doctorsList.length);
+    } catch (e) {
+      isLoading.value = false;
+      print('Error fetching doctors: $e');
+    } finally {
+      isLoading.value = false;
+    }
+  }
+
+  addDoctors() {
+    doctorService.doctorsList.addAll(doctors.map((doctor) {
+      return DoctorsModel(
+        name: doctor['name'],
+        specality: doctor['specialty'],
+        educations: doctor['Education'],
+      );
+    }).toList());
   }
 }

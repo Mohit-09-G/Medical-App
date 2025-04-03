@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_colors.dart';
 import 'package:health_app/config/app_images.dart';
+import 'package:health_app/config/app_routes.dart';
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
+import 'package:health_app/home_page.dart';
+import 'package:health_app/presentaion/controller/doctorscreen/doctorcreen_controller.dart';
 
 import 'package:health_app/presentaion/controller/home/home_screen_controller.dart';
 
@@ -21,6 +24,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   HomeScreenController controller = Get.put(HomeScreenController());
+  DoctorcreenController doctorcreenController =
+      Get.put(DoctorcreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -40,28 +45,38 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Column(
-                      spacing: 5,
-                      children: [
-                        Image.asset(AppImages.doctor),
-                        Text(
-                          AppString.doctor,
-                          style: CustomTextStyle.size12blue,
-                        )
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.doctorScreen);
+                      },
+                      child: Column(
+                        spacing: 5,
+                        children: [
+                          Image.asset(AppImages.doctor),
+                          Text(
+                            AppString.doctor,
+                            style: CustomTextStyle.size12blue,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
                     flex: 1,
-                    child: Column(
-                      spacing: 5,
-                      children: [
-                        Image.asset(AppImages.heart),
-                        Text(
-                          AppString.favourite,
-                          style: CustomTextStyle.size12blue,
-                        )
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        Get.dialog(HomePage());
+                      },
+                      child: Column(
+                        spacing: 5,
+                        children: [
+                          Image.asset(AppImages.heart),
+                          Text(
+                            AppString.favourite,
+                            style: CustomTextStyle.size12blue,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(

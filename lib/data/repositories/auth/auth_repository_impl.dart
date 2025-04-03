@@ -8,10 +8,11 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl({required this.remotedatasource});
 
   @override
-  Future<User?> createAccount(String username, String password) async {
+  Future<User?> createAccount(String username, String password, String name,
+      String? mobile, String? date) async {
     try {
-      final userCredential =
-          await remotedatasource.createAccount(username, password);
+      final userCredential = await remotedatasource.createAccount(
+          username, password, name, mobile, date);
       return userCredential.user;
     } catch (e) {
       throw Exception('Repository: Failed to create account: ${e.toString()}');
@@ -22,8 +23,10 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Map> signInWithEmailAndPassword(
       String username, String password) async {
     try {
-      final result =
-          await remotedatasource.signInWithEmailAndPassword(username, password);
+      final result = await remotedatasource.signInWithEmailAndPassword(
+        username,
+        password,
+      );
       if (result['status'] == 'success') {
         return {'success': true, 'user': result['user']};
       } else {

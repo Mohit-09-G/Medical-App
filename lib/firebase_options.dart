@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCYVaKHIl_Y-N4P4WV2b4Ki5FS2cmnjfNY',
-    appId: '1:305516611322:android:5cd25cbd25d3265c2dab43',
-    messagingSenderId: '305516611322',
-    projectId: 'medicalapp-23666',
-    storageBucket: 'medicalapp-23666.firebasestorage.app',
+    apiKey: 'AIzaSyAdw97jV9YyRBsV5uxADq9pVSTOKNQpzk8',
+    appId: '1:1073808737133:android:c15d98f3534e9bd23ad064',
+    messagingSenderId: '1073808737133',
+    projectId: 'newmedapp',
+    storageBucket: 'newmedapp.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCwkLUW5K-0FVodlsAwJwN014lu7woqhPo',
-    appId: '1:305516611322:ios:8496eecacaf78c6a2dab43',
-    messagingSenderId: '305516611322',
-    projectId: 'medicalapp-23666',
-    storageBucket: 'medicalapp-23666.firebasestorage.app',
+    apiKey: 'AIzaSyC1VNaMjen19drUhX7hctFRAt2tARzIK0U',
+    appId: '1:1073808737133:ios:61c4e85c8155ef9d3ad064',
+    messagingSenderId: '1073808737133',
+    projectId: 'newmedapp',
+    storageBucket: 'newmedapp.firebasestorage.app',
     iosBundleId: 'com.example.healthApp',
   );
+
 }

@@ -6,7 +6,8 @@ class CreateAccountUsecases {
 
   CreateAccountUsecases({required this.repository});
 
-  Future<User?> execute(String userame, String password) {
-    return repository.createAccount(userame, password);
+  Future<User?> execute(String userame, String password, String name,
+      String? mobile, String? date) {
+    return repository.createAccount(userame, password, name, date, mobile);
   }
 }

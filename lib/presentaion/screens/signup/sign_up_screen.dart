@@ -5,6 +5,8 @@ import 'package:health_app/config/app_images.dart';
 
 import 'package:health_app/config/app_string.dart';
 import 'package:health_app/config/customtextstyle.dart';
+import 'package:health_app/di/injection.dart';
+import 'package:health_app/domain/usecases/create_account_usecases.dart';
 import 'package:health_app/presentaion/controller/signup/signup_controller.dart';
 import 'package:health_app/presentaion/screens/login/widgets/appbar.dart';
 import 'package:health_app/presentaion/screens/login/widgets/circular_baground.dart';
@@ -19,15 +21,10 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-late SignupController controller;
+SignupController controller = Get.put(
+    SignupController(createAccountUsecases: getIt<CreateAccountUsecases>()));
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  @override
-  void initState() {
-    controller = Get.find<SignupController>();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -265,7 +262,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 textColor: AppColors.white,
                                 onTap: () {
                                   if (controller.isFormValid.value) {
-                                    controller.getUsename();
                                     controller.createAccount();
                                     // Get.snackbar(
                                     //     'created', 'Succesfully Registred');

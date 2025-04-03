@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_routes.dart';
@@ -13,6 +14,7 @@ class SignupController extends GetxController {
   final TextEditingController dateController = TextEditingController();
 
   final RxString emailError = RxString('');
+  RxString username = ''.obs;
   final RxString nameError = RxString('');
   final RxString paswordError = RxString('');
   final RxString mobileError = RxString('');
@@ -111,7 +113,11 @@ class SignupController extends GetxController {
   Future<void> createAccount() async {
     try {
       final user = await createAccountUsecases.execute(
-          emailController.text, passwordController.text);
+          emailController.text,
+          passwordController.text,
+          nameController.text,
+          mobileController.text,
+          dateController.text);
 
       if (user != null) {
         Get.offAllNamed(AppRoutes.loginScreen);
@@ -124,14 +130,11 @@ class SignupController extends GetxController {
     }
   }
 
-  RxString username = ''.obs;
-
-  void getUsename() {
-    if (nameController.text.isNotEmpty) {
-      username.value = nameController.text;
-      print("Username set to: ${username.value}");
-    } else {
-      print("NameController is empty");
+  getDisplayName() {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      username.value = user.displayName.toString();
     }
+    return null;
   }
 }
