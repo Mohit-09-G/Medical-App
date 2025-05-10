@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_app/config/app_routes.dart';
 import 'package:health_app/config/validator_case.dart';
+import 'package:health_app/domain/usecases/create_account_usecases.dart';
 
 class SignupController extends GetxController {
+  final CreateAccountUsecases createAccountUsecases;
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
@@ -11,6 +14,7 @@ class SignupController extends GetxController {
   final TextEditingController dateController = TextEditingController();
 
   final RxString emailError = RxString('');
+  RxString username = ''.obs;
   final RxString nameError = RxString('');
   final RxString paswordError = RxString('');
   final RxString mobileError = RxString('');
@@ -19,6 +23,8 @@ class SignupController extends GetxController {
   final RxBool isFormValid = false.obs;
 
   final RxBool obscurePassword = true.obs;
+
+  SignupController({required this.createAccountUsecases});
 
   void validateForm() {
     isFormValid.value = nameError.value.isEmpty &&
@@ -102,5 +108,33 @@ class SignupController extends GetxController {
 
       dateController.text = formattedDate;
     }
+  }
+
+  Future<void> createAccount() async {
+    try {
+      final user = await createAccountUsecases.execute(
+          emailController.text,
+          passwordController.text,
+          nameController.text,
+          mobileController.text,
+          dateController.text);
+
+      if (user != null) {
+        Get.offAllNamed(AppRoutes.loginScreen);
+        Get.snackbar("Success", 'Account Ceated Successfully');
+      } else {
+        Get.snackbar('error', 'Failed to Create account');
+      }
+    } catch (e) {
+      Get.snackbar('Error', e.toString());
+    }
+  }
+
+  getDisplayName() {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      username.value = user.displayName.toString();
+    }
+    return null;
   }
 }
